@@ -1,9 +1,17 @@
 `include "dec16.v"
 module tb_dec16();
 reg [3:0] a;
-reg ip;
+reg ip,clk;
 wire [15:0]s;
-dec16 ad(ip,a[3],a[2],a[1],a[0],s[0],s[1],s[2],s[3],s[4],s[5],s[6],s[7],s[8],s[9],s[10],s[11],s[12],s[13],s[14],s[15]);
+dec16 ad(ip,clk,a[3],a[2],a[1],a[0],s[0],s[1],s[2],s[3],s[4],s[5],s[6],s[7],s[8],s[9],s[10],s[11],s[12],s[13],s[14],s[15]);
+initial begin
+clk=0;
+forever begin
+
+#1 clk= ~clk;
+
+end 
+end
 initial begin
 ip=1'd1;
 a=4'd0;

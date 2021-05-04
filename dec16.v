@@ -1,5 +1,5 @@
-module dec16(ip,i1,i2,i3,i4,o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15);
-input ip,i1,i2,i3,i4;
+module dec16(ip,clk,i1,i2,i3,i4,o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15);
+input ip,i1,i2,i3,i4,clk;
 output reg o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15;
 initial begin
 o0=1'd0;
@@ -19,7 +19,7 @@ o13=1'd0;
 o14=1'd0;
 o15=1'd0;
 end
-always@(*)
+always@(posedge clk)
 begin
 if(~i1&~i2&~i3&~i4)
 begin
