@@ -1,5 +1,5 @@
 module f_adder(a,b,cin,clk,s,c);
-input wire a,b,clk,cin;
+input  a,b,clk,cin;
 reg t1,t2,t3;
 output reg s,c;
 always@(posedge clk)

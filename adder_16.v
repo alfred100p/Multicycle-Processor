@@ -1,4 +1,4 @@
-`include "adder_8.v"
+`include "f_adder.v"
 
 module adder_16(a,b,clk,cin,s,c);
 input [15:0] a,b;
